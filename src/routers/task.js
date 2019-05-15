@@ -8,8 +8,7 @@ router.post('/tasks', auth, async (req, res) => {
         ...req.body,
         owner: req.user._id
     })
-
-    
+   
     try {
         await task.save()
         res.status(201).send(task)
@@ -92,7 +91,7 @@ router.delete('/tasks/:id', auth, async (req, res) => {
         if (!task) {
             res.status(404).send()
         }
-        res.status(200).send(task)
+        res.status(200).send()
     } catch (error) {
         res.status(500).send(error)
     }
