@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Annie's Task Manager | Log in</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <section class="login-bg">
+        <div class="login-form">
+            <p>Welcome to Annie's Task Manager, please log in!</p>
+            <form class="input-group" action="/users/login" method="POST">
+                <label name="email">Email:</label>
+                <input type="email" name="email" placeholder="type your email" value="{{user.email}}" required >
+                <label name="password">Password:</label>
+                <input type="password" name="password" placeholder="type your password" value="{{user.password}}" required>
+                
+                <button class="button" type="submit">Log In</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

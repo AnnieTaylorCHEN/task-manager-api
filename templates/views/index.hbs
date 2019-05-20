@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Annie's Task Manager</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <section class="login-bg">
+        <div class="login-form">
+            <p>Welcome to Annie's Task Manager, please create an account!</p>
+            <form class="input-group" action="/users" method="POST">
+                <label name="name">Name:</label>
+                <input type="text" name="name" placeholder="type your username" required>
+                <label name="email">Email:</label>
+                <input type="email" name="email" placeholder="type your email" required >
+                <label name="password">Password: (must be 7 characters or more)</label>
+                <input type="password" name="password" placeholder="type your password" required>
+                
+                <button class="button" type="submit">Sign Up</button>
+            </form>
+
+            <div class="input-group">
+                <p>Already a user?</p>
+                <a class="button" href="/users/login">Log in</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

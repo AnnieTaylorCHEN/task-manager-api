@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Annie's Task Manager | User Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script defer src="/js/user-page.js"></script>
+</head>
+
+<body>
+    <section class="user-page">
+        <form class="user-details">
+            <div class="avatar">
+                <img src="img/annie.jpg">
+                <button class="button">Upload Avatar</button>
+                <button class="button button--danger">Delete Avatar</button>
+            </div>
+            <h1 class="user-name">User: Annie</h1>
+            <div class="login-info">
+                <button class="button">Log out</button>
+                <button class="button">Log out from ALL devices</button>
+                <button class="button button--danger" type="submit">Delete account</button>
+            </div>
+        </form>
+
+        <form class="task-new">
+            <h1>Create new task</h1>
+            <input type="text" name="task">
+            <button class="button" type="submit">Create Task</button>
+        </form>
+
+        <form class="task">
+            <div id= "task"><h1>1. grocery shopping and I also want to learn Node.js and I also want to buy a new book and send emails</h1></div>
+            <div class="task-buttons">
+            <button class="button" id="done-button">Done</button>
+            <button class="button button--danger" type="submit">Delete task</button>
+            </div>
+        </form>
+
+        <form class="task">
+            <div><h1>2. grocery shopping </h1></div>
+            <div class="task-buttons">
+            <button class="button" id="done-button">Done</button>
+            <button class="button button--danger" type="submit">Delete task</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+
+</html>

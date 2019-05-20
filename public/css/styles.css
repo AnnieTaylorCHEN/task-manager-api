@@ -1,0 +1,262 @@
+/*RESET CSS*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*universal*/
+:root {
+    box-sizing: border-box;
+    --color-branding: hsla(130, 27%, 36%, 0.8);
+    --color-branding-light: hsla(130, 27%, 75%, 0.8);
+    --color-branding-danger:  hsla(1, 50%, 50%, 0.8);
+}
+
+*,
+::before,
+::after{
+    box-sizing: inherit;
+}
+
+body * + *{
+    margin-top: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login-bg{
+    background-image: url(../img/task-manager-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    background-color: hsla(200, 100%, 6%, 0.6);
+    padding: 50px 30px;
+    min-width: 270px;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h1, label, p{
+    color: white;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group input {
+    color: white;
+    background-color: hsla(200, 100%, 91%, 0.3);
+    font-size: 1.3em;
+    padding: .1em .25em;
+    margin-bottom: 1.2em;
+    outline: none;
+}
+
+.input-group input:focus {
+    border: 1px solid var(--color-branding);
+}
+
+.input-group button{
+    margin-top: 1rem;
+    width: 50%;
+}
+
+.input-group .button{
+    text-align: center;
+    width: 50%;
+}
+
+.button {
+    color: white;
+    background-color: var(--color-branding);
+    font-size: 1.2rem;
+    padding: 0.5em;
+    border: 1px solid var(--color-branding);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--color-branding-light);
+}
+
+.button--danger{
+    background-color: var(--color-branding-danger);
+    padding: 0.8rem;
+    border: 1px solid var(--color-branding-danger);
+}
+
+.button--danger:hover{
+    background-color: red!important;
+}
+
+/*User page*/
+.user-page{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.user-details{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+
+.user-details button{
+    width: 60%;
+    max-width: 10em;
+}
+
+.avatar{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-branding);
+}
+
+.avatar button{
+    width: 100%;
+}
+
+.user-name{
+    padding: 1rem;
+}
+
+.login-info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 3px solid var(--color-branding);
+    border-bottom: 3px solid var(--color-branding);
+}
+
+.login-info button{
+    width: 100%;
+}
+
+.task-new{
+    display: flex;
+    flex-direction: column;
+}
+
+.task-new input {
+    padding: .5em .25em;
+    border: 1px solid var(--color-branding-light);
+    outline: none;
+}
+
+.task-new input:focus {
+    border-color: var(--color-branding)
+}
+
+.task-new button{
+    width: 60%;
+    max-width: 10em;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1em;
+    border-bottom: 3px solid var(--color-branding);
+}
+
+.task button{
+    max-width: 10em;
+}
+
+.task-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+#done-button{
+    margin-right: .5em;
+}
+
+@media only screen and (min-width: 500px){
+    .user-details{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .avatar{
+        border-bottom: none;
+    }
+
+    .login-info{
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .task button{
+        width: 10em;
+    }
+}
