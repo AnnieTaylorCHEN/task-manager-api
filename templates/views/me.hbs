@@ -13,14 +13,14 @@
     <section class="user-page">
         <form class="user-details">
             <div class="avatar">
-                <img src="img/annie.jpg">
+                <img src="/img/annie.jpg">
                 <button class="button">Upload Avatar</button>
                 <button class="button button--danger">Delete Avatar</button>
             </div>
-            <h1 class="user-name">User: Annie</h1>
+            <h1 class="user-name">User: {{name}}</h1>
             <div class="login-info">
-                <button class="button">Log out</button>
-                <button class="button">Log out from ALL devices</button>
+                <button class="button" action="/users/logout" method="POST">Log out</button>
+                <button class="button" action="/users/logoutAll" method="POST">Log out from ALL devices</button>
                 <button class="button button--danger" type="submit">Delete account</button>
             </div>
         </form>

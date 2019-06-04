@@ -195,7 +195,7 @@ a {
     border-bottom: 3px solid var(--color-branding);
 }
 
-.login-info button{
+.login-info .button{
     width: 100%;
 }
 

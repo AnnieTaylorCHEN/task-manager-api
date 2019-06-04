@@ -8,17 +8,18 @@ const router = new express.Router()
 
 //Create an user account
 router.post('/', async(req, res) => {
+    // console.log(req.body)
     const user = new User({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password
     })
-    console.log(user)
     try {
         await user.save()
-        sendWelcomeEmail(user.email, user.name)
+        // console.log(user)
+        // sendWelcomeEmail(user.email, user.name)
         const token = await user.generateAuthToken()
-        res.status(201).redirect('welcome')
+        res.status(201).render('welcome', {name: user.name})
     } catch (error) {
         res.status(400).send(error)
     }
@@ -28,37 +29,49 @@ router.post('/', async(req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
+        // console.log(user)
         const token = await user.generateAuthToken()
-        res.send({user: user, token})
+        // console.log(token)
+        // res.render('me', {name: user.name})
+        res.redirect('/users/me')
     } catch (error) {
         res.status(400).send()
     }
 })
 
+//user log out
 router.post('/logout', auth, async (req, res) => {
     try {
         req.user.token = req.user.tokens.filter((token) => {
             return token.token !== req.token
         })
         await req.user.save()
-        res.send()
+        res.redirect('users/login')
     } catch (error) {
         res.status(500).send()
     }
 })
+
+//user log out from all devices
 
 router.post('/logoutAll', auth, async (req, res) => {
     try {
         req.user.tokens = []
         await req.user.save()
-        res.send()
+        res.redirect('users/login')
     } catch (error) {
         res.status(500).send()
     }
 })
 
+//user page
+
 router.get('/me', auth, async (req, res) => {
-    res.send(req.user)
+    try {
+        res.render('me', {name: user.name})
+    } catch (error) {
+        res.status(500).send()
+    }
 })
 
 
@@ -89,6 +102,8 @@ router.delete('/me', auth, async (req, res)=> {
         res.status(500).send(error)
     }
 })
+
+//update avatar
 
 const upload = multer({
     limits: {

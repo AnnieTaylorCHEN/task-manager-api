@@ -19,7 +19,8 @@ app.set('views', path.join(__dirname, '../templates/views'))
 hbs.registerPartials(path.join(__dirname, '../templates/partials'))
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride('_method'))
-app.use(express.json())
+// app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.use('/', indexRouter)
 app.use('/users', userRouter)
@@ -34,13 +35,6 @@ app.get('/users/login', (req, res) => {
     res.render('login')
 })
 
-app.get('/users', (req, res) => {
-    res.render('users')
-})
-
-app.get('/welcome', (req, res) => {
-    res.render('welcome')
-})
 
 module.exports = app
 

@@ -13,14 +13,14 @@
         <div class="login-form">
             <p>Welcome to Annie's Task Manager, please create an account!</p>
             <form class="input-group" action="/users" method="POST">
-                <label name="name">Name:</label>
-                <input type="text" name="name" placeholder="type your username" required>
-                <label name="email">Email:</label>
-                <input type="email" name="email" placeholder="type your email" required >
-                <label name="password">Password: (must be 7 characters or more)</label>
-                <input type="password" name="password" placeholder="type your password" required>
+                <label>Name: (required)</label>
+                <input type="text" name="name" value="{{user.name}}" placeholder="type your username" required>
+                <label>Email: (required)</label>
+                <input type="email" name="email" value="{{user.email}}" placeholder="type your email" required >
+                <label>Password: (must be 7 characters or more)</label>
+                <input type="password" name="password" value="{{user.password}}" placeholder="type your password" required>
                 
-                <button class="button" type="submit">Sign Up</button>
+                <button class="button" type="submit" >Sign Up</button>
             </form>
 
             <div class="input-group">
